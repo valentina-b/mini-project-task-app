@@ -7,11 +7,18 @@ from os import path
 if path.exists("env.py"):
     import env
 
+# app = Flask(__name__)
+# app.config["MONGO_DBNAME"] = 'task_manager'
+# app.config["MONGO_URI"] = os.getenv('MONGO_URI', 'mongodb://localhost')
+
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = 'task_manager'
-# app.config["MONGO_URI"] = os.getenv('MONGO_URI', 'mongodb://localhost')
 app.config["MONGO_URI"] = os.getenv('MONGO_URI')
+
+
 # MONGODB_URI = os.getenv("MONGO_URI")
+# DBS_NAME = "myTestDB"
+# COLLECTION_NAME = "myFirstMDB"
 
 mongo = PyMongo(app)
 
